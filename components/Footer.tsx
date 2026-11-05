@@ -92,10 +92,12 @@ export default function Footer() {
         {/* Footer Bottom Legal Line */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4">
           <p>© 2026 Jortin Limited. Company No. PVT-GYU53RVX. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>Powered by Quality &amp; Integrity</span>
-            <span>•</span>
+          <div className="flex items-center gap-4 flex-wrap">
             <span>Ongata Rongai, Kenya</span>
+            <span>•</span>
+            <a href="/CREDITS.txt" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white underline transition-colors">
+              Photo Credits
+            </a>
           </div>
         </div>
       </div>

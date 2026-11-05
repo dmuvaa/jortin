@@ -171,10 +171,33 @@ export default function ProjectsPage() {
       {/* HOW EVERY PROJECT IS DELIVERED (6 STEPS) */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-amber-600">Our Process</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy">How every project is delivered</h2>
             <p className="text-slate-600 text-base">A disciplined 6-stage lifecycle ensuring quality, cost control and safety from day one.</p>
+          </div>
+
+          {/* Process Spotlight Card with project-process.jpg */}
+          <div className="mb-12 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div className="lg:col-span-5 relative h-64 lg:h-full min-h-[260px]">
+              <Image 
+                src="/images/projects/project-process.jpg" 
+                alt="Suspended slab formwork and reinforcement inspections conducted during construction" 
+                fill 
+                className="object-cover" 
+              />
+            </div>
+            <div className="lg:col-span-7 p-6 sm:p-8 space-y-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded border border-amber-200">
+                Quality Assurance
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy">
+                Zero-tolerance inspection at every critical pour
+              </h3>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Before any concrete is poured on suspended slabs, columns or foundation footings, our engineers verify bar spacing, cover blocks, lap lengths and shuttering stability. Nothing proceeds without signed engineering approval.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

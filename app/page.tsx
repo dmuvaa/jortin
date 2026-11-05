@@ -402,7 +402,60 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5: WHO WE BUILD FOR */}
+      {/* SECTION 5: TRUSTED ACROSS SECTORS (WITH CITY-STREET.JPG) */}
+      <section className="py-20 bg-brand-navy text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="inline-block text-xs font-bold uppercase tracking-wider text-amber-400">
+                PROVEN ACROSS SECTORS
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                Trusted across public, development and private sectors
+              </h2>
+              <p className="text-slate-300 text-base leading-relaxed">
+                From public infrastructure under IFMIS and PPIP procurement standards to development partners and private property developers, our engineering leadership delivers projects that stand up to inspection.
+              </p>
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-slate-200">Public infrastructure delivered under IFMIS and PPIP standards</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-slate-200">Donor and NGO projects with transparent M&amp;E and photographic reporting</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-slate-200">Commercial and residential structures built to exact engineering specs</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-slate-200">Direct supervision by registered directors on every active site</span>
+                </div>
+              </div>
+              <div className="pt-4">
+                <Link href="/contact" className="btn-gold inline-flex items-center gap-2">
+                  <span>Work With Us</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 aspect-[4/3] lg:aspect-[16/11]">
+              <Image 
+                src="/images/city-street.jpg" 
+                alt="Magadi Road civil works and infrastructure supervised in Ongata Rongai, Kenya"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: WHO WE BUILD FOR */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">

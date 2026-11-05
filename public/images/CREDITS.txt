@@ -1,0 +1,125 @@
+Jortin Limited replacement image pack: photo credits
+All photos from Wikimedia Commons, re-exported/cropped. Representative only; they do not depict Jortin Limited projects.
+CC BY / CC BY-SA licences require attribution; keep this file and credit on the site.
+
+hero-home-bg.jpg
+  Original: Construction in Nairobi.JPG
+  Author: SuaveKevinKariuki
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Construction_in_Nairobi.JPG
+
+hero-about-bg.jpg
+  Original: Aerial view of the Nairobi skyline from the KICC rooftop at golden hour.jpg
+  Author: Lebu Ayiga
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Nairobi_skyline_from_the_KICC_rooftop_at_golden_hour.jpg
+
+building-construction.jpg
+  Original: Construction in Nairobi area.JPG
+  Author: SuaveKevinKariuki
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Construction_in_Nairobi_area.JPG
+
+building-crane.jpg
+  Original: Construction of New Hazina Towers-Nairobi, Kenya EA.jpg
+  Author: Alexnyash
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Construction_of_New_Hazina_Towers-Nairobi,_Kenya_EA.jpg
+
+city-street.jpg
+  Original: Magadi Road Works, Ongata Rongai, Kenya.jpg
+  Author: User:Iamtembo
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Magadi_Road_Works,_Ongata_Rongai,_Kenya.jpg
+
+consultancy-design.jpg
+  Original: IMAGES-1501 20.jpg
+  Author: Antony Trivet
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:IMAGES-1501_20.jpg
+
+consulting.jpg
+  Original: Electricity workers.jpg
+  Author: Unique koncept
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Electricity_workers.jpg
+
+electrical-mechanical.jpg
+  Original: Electrician Working.jpg
+  Author: photo taken by flickr user editor B
+  Licence: CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File:Electrician_Working.jpg
+
+procurement-maintenance.jpg
+  Original: Water tanks - Rongai, Kenya.jpg
+  Author: Queen Asali
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Water_tanks_-_Rongai,_Kenya.jpg
+
+project-management.jpg
+  Original: Magadi Road works supervised, Ongata Rongai, Kenya.jpg
+  Author: User:Iamtembo
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Magadi_Road_works_supervised,_Ongata_Rongai,_Kenya.jpg
+
+rebar-worker.jpg
+  Original: Rebar worker.jpg
+  Author: Tomas Castelazo
+  Licence: CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File:Rebar_worker.jpg
+
+road-works.jpg
+  Original: Steam Rolling the Asphalt (1) 476084.jpg
+  Author: Chief Petty Officer Jesse Sherwin III
+  Licence: Public domain
+  Source: https://commons.wikimedia.org/wiki/File:Steam_Rolling_the_Asphalt_(1)_476084.jpg
+
+structural-civil.jpg
+  Original: Rebar before concrete (7187872035).jpg
+  Author: U.S. Army Corps of Engineers Sacramento District
+  Licence: Public domain
+  Source: https://commons.wikimedia.org/wiki/File:Rebar_before_concrete_(7187872035).jpg
+
+water-sanitation.jpg
+  Original: Drilling for Water Manually in Kenya.jpg
+  Author: Stevemugo
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Drilling_for_Water_Manually_in_Kenya.jpg
+
+workers-ppe.jpg
+  Original: African women at building work, source, KIAMBU COUNTY, KENYA.jpg
+  Author: Stephen mugo m
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:African_women_at_building_work,_source,_KIAMBU_COUNTY,_KENYA.jpg
+
+projects/project-building.jpg
+  Original: Building Walls.jpg
+  Author: Woodwayne
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Building_Walls.jpg
+
+projects/project-roads.jpg
+  Original: Construction of a pedestrians cross way at Kenyatta University.JPG
+  Author: Stephenwanjau
+  Licence: CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File:Construction_of_a_pedestrians_cross_way_at_Kenyatta_University.JPG
+
+projects/project-water.jpg
+  Original: Water tank tower.jpg
+  Author: Queen Asali
+  Licence: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Water_tank_tower.jpg
+
+projects/project-structural.jpg
+  Original: Assembling rebar cages for installing concrete foundations. 11-08-2019 (49070775561).jpg
+  Author: MTA Capital Construction Mega Projects
+  Licence: CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File:Assembling_rebar_cages_for_installing_concrete_foundations._11-08-2019_(49070775561).jpg
+
+projects/project-process.jpg
+  Original: Suspended-slab-formwork.jpg
+  Author: Photograph by Bill Bradley/ billbeee. You can contact me through my website my website
+  Licence: CC BY 2.5
+  Source: https://commons.wikimedia.org/wiki/File:Suspended-slab-formwork.jpg
+
+Logos, favicon and client badges: original artwork for this pack (text and geometric shapes only; client badges are text, not the clients' real logos).
