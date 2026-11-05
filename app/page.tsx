@@ -21,16 +21,18 @@ export default function HomePage() {
     <>
       {/* HERO SECTION */}
       <section className="relative bg-brand-navy text-white pt-20 pb-28 overflow-hidden min-h-[640px] flex items-center">
-        {/* Background Image with Overlay */}
+        {/* Background Image with Contrast Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero-home-bg.jpg" 
-            alt="Construction site in Kenya with engineers in safety gear reviewing works" 
+            alt="Construction site in Kenya with multi-storey concrete framework and tower crane" 
             fill
-            className="object-cover object-center opacity-30 mix-blend-luminosity"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy/95 to-brand-navy/80" />
+          {/* Gradient: deep dark navy behind text on the left, translucent on the right to reveal the construction site */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071527]/95 via-[#0b1f3b]/75 to-[#0b1f3b]/30" />
+          <div className="absolute inset-0 bg-slate-950/25" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">

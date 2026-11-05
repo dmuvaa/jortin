@@ -24,8 +24,16 @@ export default function ServicesPage() {
     <>
       {/* HERO */}
       <section className="relative bg-brand-navy text-white pt-20 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <Image src="/images/hero-home-bg.jpg" alt="Construction background" fill className="object-cover" />
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/rebar-worker.jpg" 
+            alt="Construction rebar reinforcement works in Kenya" 
+            fill 
+            className="object-cover object-center"
+            priority 
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071527]/95 via-[#0b1f3b]/80 to-[#0b1f3b]/40" />
+          <div className="absolute inset-0 bg-slate-950/20" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">

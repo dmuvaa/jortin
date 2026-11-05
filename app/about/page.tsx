@@ -27,12 +27,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero-about-bg.jpg" 
-            alt="Nairobi skyline viewed from the south, the region Jortin Limited serves" 
+            alt="Aerial view of the Nairobi skyline from the KICC rooftop at golden hour" 
             fill
-            className="object-cover opacity-25 mix-blend-luminosity"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy/95 to-brand-navy/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071527]/95 via-[#0b1f3b]/75 to-[#0b1f3b]/35" />
+          <div className="absolute inset-0 bg-slate-950/20" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
