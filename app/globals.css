@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0b1f3b;
+  --color-brand-navy-dark: #071527;
+  --color-brand-navy-light: #162f56;
+  --color-brand-navy-card: #0f274a;
+  --color-brand-gold: #e5a93c;
+  --color-brand-gold-hover: #d19427;
+  --color-brand-gold-light: #fef3c7;
+  --color-brand-gold-muted: rgba(229, 169, 60, 0.15);
+  --color-brand-dark: #1c232d;
+  --color-brand-surface: #f8fafc;
+  --color-brand-surface-card: #ffffff;
+  --color-brand-border: #e2e8f0;
+  --color-brand-text: #0f172a;
+  --color-brand-muted: #64748b;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility: Visually hidden utility */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--color-brand-gold);
+  color: #0b1f3b;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+/* High contrast focus ring */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--color-brand-gold);
+  outline-offset: 2px;
+}
+
+/* Modern Web Guidance: Form input styling and :user-invalid timing */
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  min-height: 48px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #0b1f3b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11, 31, 59, 0.15);
+}
+
+/* Applied ONLY after user interaction */
+.form-input:user-invalid, 
+.form-select:user-invalid, 
+.form-textarea:user-invalid {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.form-input:user-valid,
+.form-select:user-valid,
+.form-textarea:user-valid {
+  border-color: #16a34a;
+}
+
+.field-error-msg {
+  display: none;
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin-top: 0.375rem;
+  font-weight: 500;
+}
+
+.form-input:user-invalid ~ .field-error-msg,
+.form-select:user-invalid ~ .field-error-msg,
+.form-textarea:user-invalid ~ .field-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Button micro-interactions */
+.btn-gold {
+  background-color: var(--color-brand-gold);
+  color: #0b1f3b;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  min-height: 48px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(229, 169, 60, 0.25);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-brand-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -2px rgba(229, 169, 60, 0.35);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  min-height: 48px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-outline-navy {
+  background-color: transparent;
+  color: #0b1f3b;
+  border: 1.5px solid #0b1f3b;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  min-height: 48px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-outline-navy:hover {
+  background-color: #0b1f3b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Card hover effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(11, 31, 59, 0.12);
+}
+
+/* Subtle badge pulse */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+.pulse-badge {
+  animation: soft-pulse 2.5s infinite ease-in-out;
+}
