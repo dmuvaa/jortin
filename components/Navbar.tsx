@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { services } from '@/lib/services';
 
 const phoneDisplay = '0722 902 688';
 const phoneHref = 'tel:+254722902688';
@@ -17,18 +18,19 @@ const NAV_ITEMS = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Team', href: '/team' },
-  { label: 'Compliance', href: '/compliance' },
   { label: 'Clients', href: '/clients' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
 
   // Close drawer on path change
   useEffect(() => {
     setIsOpen(false);
+    setServicesOpen(false);
     document.body.style.overflow = '';
   }, [pathname]);
 
@@ -72,16 +74,62 @@ export default function Navbar() {
               {NAV_ITEMS.map((item) => {
                 const isActive = (item.href === '/' && pathname === '/') || 
                                  (item.href !== '/' && pathname.startsWith(item.href));
+                const itemClass = `text-sm font-semibold transition-colors duration-150 py-1 border-b-2 ${
+                  isActive
+                    ? 'text-brand-navy border-brand-gold font-bold'
+                    : 'text-slate-600 hover:text-brand-navy border-transparent hover:border-slate-300'
+                }`;
+
+                if (item.href === '/services') {
+                  return (
+                    <div
+                      key={item.href}
+                      className="relative"
+                      onMouseEnter={() => setServicesOpen(true)}
+                      onMouseLeave={() => setServicesOpen(false)}
+                      onBlur={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                          setServicesOpen(false);
+                        }
+                      }}
+                    >
+                      <Link
+                        href="/services"
+                        className={`${itemClass} inline-flex items-center gap-1`}
+                        aria-haspopup="true"
+                        aria-expanded={servicesOpen}
+                        onFocus={() => setServicesOpen(true)}
+                      >
+                        Services
+                        <ChevronDown className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                      </Link>
+                      <div className={`absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 ${servicesOpen ? 'block' : 'hidden'}`}>
+                        <div className="rounded-xl border border-slate-200 bg-white py-2 shadow-xl">
+                          {services.map((service) => {
+                            const href = `/services/${service.slug}`;
+                            const current = pathname === href;
+                            return (
+                              <Link
+                                key={service.slug}
+                                href={href}
+                                aria-current={current ? 'page' : undefined}
+                                className={`block px-4 py-2.5 text-sm font-semibold ${
+                                  current ? 'bg-amber-50 text-brand-navy' : 'text-slate-700 hover:bg-slate-50 hover:text-brand-navy'
+                                }`}
+                                onClick={() => setServicesOpen(false)}
+                              >
+                                {service.title}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`text-sm font-semibold transition-colors duration-150 py-1 border-b-2 ${
-                      isActive
-                        ? 'text-brand-navy border-brand-gold font-bold'
-                        : 'text-slate-600 hover:text-brand-navy border-transparent hover:border-slate-300'
-                    }`}
-                  >
+                  <Link key={item.href} href={item.href} className={itemClass}>
                     {item.label}
                   </Link>
                 );
@@ -151,16 +199,42 @@ export default function Navbar() {
           {NAV_ITEMS.map((item) => {
             const isActive = (item.href === '/' && pathname === '/') || 
                              (item.href !== '/' && pathname.startsWith(item.href));
+            const itemClass = `block py-3 px-4 rounded-lg text-base font-semibold transition-colors ${
+              isActive
+                ? 'bg-amber-50 text-brand-navy font-bold border-l-4 border-brand-gold'
+                : 'text-slate-700 hover:bg-slate-100'
+            }`;
+
+            if (item.href === '/services') {
+              return (
+                <div key={item.href}>
+                  <Link href="/services" className={itemClass}>
+                    Services
+                  </Link>
+                  <div className="ml-4 mt-1 space-y-0.5 border-l border-slate-200 pl-2">
+                    {services.map((service) => {
+                      const href = `/services/${service.slug}`;
+                      const current = pathname === href;
+                      return (
+                        <Link
+                          key={service.slug}
+                          href={href}
+                          aria-current={current ? 'page' : undefined}
+                          className={`block rounded-lg px-3 py-2 text-sm font-semibold ${
+                            current ? 'text-brand-navy bg-amber-50' : 'text-slate-600 hover:bg-slate-100'
+                          }`}
+                        >
+                          {service.title}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`block py-3 px-4 rounded-lg text-base font-semibold transition-colors ${
-                  isActive
-                    ? 'bg-amber-50 text-brand-navy font-bold border-l-4 border-brand-gold'
-                    : 'text-slate-700 hover:bg-slate-100'
-                }`}
-              >
+              <Link key={item.href} href={item.href} className={itemClass}>
                 {item.label}
               </Link>
             );
@@ -174,7 +248,7 @@ export default function Navbar() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-700 transition-colors"
+            className="btn-whatsapp w-full text-sm"
           >
             Chat on WhatsApp
           </a>

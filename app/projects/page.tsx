@@ -3,10 +3,9 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
-  title: 'Construction Projects in Kenya | Jortin Limited',
+  title: { absolute: 'Construction Projects in Kenya | Jortin Limited' },
   description: 'Explore the building, road, water and structural work Jortin Limited delivers for government, NGO and private clients across Kenya.',
   alternates: {
     canonical: 'https://www.jortinlimited.co.ke/projects',
@@ -33,19 +32,8 @@ export default function ProjectsPage() {
               The kind of work we deliver, <span className="text-brand-gold">sector by sector</span>
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              Every project we take on is shaped by its site, its funder and its users. This page shows the type and standard of work we deliver across our four core sectors. Detailed project references, including client contacts where permitted, are available to procurement teams on request.
+              Every project we take on is shaped by its site, its funder and its users. This page shows the type and standard of work we deliver across our four core sectors. Detailed project references, including client contacts where permitted, are available to procurement teams on request. The building, water tower and column photographs are from Jortin sites. The road photograph is representative.
             </p>
-          </div>
-          <div className="pt-8">
-            <JumpNav
-              items={[
-                { href: '#building', label: 'Building' },
-                { href: '#roads', label: 'Roads' },
-                { href: '#water', label: 'Water' },
-                { href: '#structural', label: 'Structural' },
-                { href: '#process', label: 'Process' },
-              ]}
-            />
           </div>
         </div>
       </section>
@@ -89,7 +77,7 @@ export default function ProjectsPage() {
             <div className="order-1 lg:order-2 space-y-4">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Roads &amp; Civil Works</h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                As an NCA 8 registered road works contractor, we undertake road construction and rehabilitation, access roads and the drainage that protects them. We plan works to keep communities moving and to meet the reporting standards of public and donor clients.
+                As an <Link href="/about#compliance" className="font-semibold text-brand-navy hover:text-amber-800">NCA 8 registered road works contractor</Link>, we undertake road construction and rehabilitation, access roads and the drainage that protects them. We plan works to keep communities moving and to meet the reporting standards of public and donor clients.
               </p>
               <div className="space-y-2 pt-2 text-sm text-slate-700">
                 <div className="font-bold text-slate-900">Typical Scope:</div>
@@ -113,7 +101,7 @@ export default function ProjectsPage() {
             <div className="space-y-4">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Water &amp; Sanitation</h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Water projects demand technical skill and community sensitivity. As an NCA 8 registered water works contractor, we deliver borehole drilling and equipping, reticulation, storage and sanitation for institutions, communities and private clients.
+                Water projects demand technical skill and community sensitivity. As an <Link href="/about#compliance" className="font-semibold text-brand-navy hover:text-amber-800">NCA 8 registered water works contractor</Link>, we deliver borehole drilling and equipping, reticulation, storage and sanitation for institutions, communities and private clients.
               </p>
               <div className="space-y-2 pt-2 text-sm text-slate-700">
                 <div className="font-bold text-slate-900">Typical Scope:</div>
@@ -143,7 +131,7 @@ export default function ProjectsPage() {
             <div className="order-1 lg:order-2 space-y-4">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Structural Works</h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Structural works are where engineering leadership matters most. Our Technical Director, a JKUAT-trained civil and structural engineer, oversees design and site checks on foundations, reinforced concrete and structural steel.
+                Structural works are where engineering leadership matters most. Our Technical Director, a JKUAT-trained <Link href="/team" className="font-semibold text-brand-navy underline decoration-amber-400 underline-offset-2">civil and structural engineer</Link>, oversees design and site checks on foundations, reinforced concrete and structural steel.
               </p>
               <div className="space-y-2 pt-2 text-sm text-slate-700">
                 <div className="font-bold text-slate-900">Typical Scope:</div>

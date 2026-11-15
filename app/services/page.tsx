@@ -4,11 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Check, ArrowRight } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
-import JumpNav from '@/components/JumpNav';
 import { services } from '@/lib/services';
 
 export const metadata: Metadata = {
-  title: 'Construction Services in Kenya: Roads, Water | Jortin',
+  title: { absolute: 'Construction Services in Kenya: Roads, Water | Jortin' },
   description: 'Consultancy, structural and civil works, building, road works, water and sanitation, MEP and project management. One accountable contractor in Kenya.',
   alternates: {
     canonical: 'https://www.jortinlimited.co.ke/services',
@@ -48,9 +47,6 @@ export default function ServicesPage() {
               Infrastructure is delivered in stages, and every stage affects the next. Our nine service lines cover the full project lifecycle, from feasibility studies and structural design to roads, water systems, buildings and long-term maintenance.
             </p>
           </div>
-          <div className="pt-8">
-            <JumpNav items={services.map((service) => ({ href: `#${service.slug}`, label: service.nav }))} />
-          </div>
         </div>
       </section>
 
@@ -76,7 +72,7 @@ export default function ServicesPage() {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link href={`/contact?service=${service.slug}`} className="btn-outline-navy text-sm">
-                    Request a quote
+                    Request a Quote
                   </Link>
                 </div>
               </div>

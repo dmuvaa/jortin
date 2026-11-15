@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { UserCheck, CheckCircle2, ShieldCheck, Users } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
 
@@ -54,7 +55,7 @@ export default function TeamPage() {
                   <div className="text-amber-600 font-bold text-sm tracking-wide mt-0.5">Managing Director</div>
                 </div>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Karithi John leads the company's strategy, client relationships and business development. He holds a Master's degree in Strategic Planning and has more than 20 years of professional experience. He ensures every project is properly planned, resourced and aligned with client objectives, and leads our consulting work in strategic planning, tender writing, training and monitoring and evaluation.
+                  Karithi John leads the company's strategy, client relationships and business development. He holds a Master's degree in Strategic Planning and has more than 20 years of professional experience. He ensures every project is properly planned, resourced and aligned with client objectives, and leads our <Link href="/services/consulting" className="font-semibold text-brand-navy underline decoration-amber-400 underline-offset-2">consulting work in strategic planning, tender writing, training and monitoring and evaluation</Link>.
                 </p>
                 <div className="pt-2 border-t border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Focus Areas:</div>
@@ -79,7 +80,7 @@ export default function TeamPage() {
                   <div className="text-amber-600 font-bold text-sm tracking-wide mt-0.5">Technical Director · Civil &amp; Structural Engineer</div>
                 </div>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Eng. Martin Mutuma is a Civil and Structural Engineer trained at Jomo Kenyatta University of Agriculture and Technology (JKUAT), with more than 8 years of practice. He leads structural design, technical quality and site supervision, ensuring every structure is built to design and to standard.
+                  Eng. Martin Mutuma is a Civil and Structural Engineer trained at Jomo Kenyatta University of Agriculture and Technology (JKUAT), with more than 8 years of practice. He leads <Link href="/services/structural" className="font-semibold text-brand-navy hover:text-amber-800">structural design</Link>, technical quality and site supervision, ensuring every structure is built to design and to standard.
                 </p>
                 <div className="pt-2 border-t border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Focus Areas:</div>
@@ -102,6 +103,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">How our leadership shows up on your project</h2>
+            <p className="text-slate-600 text-base">Headshots will replace the initials when they are available. Until then, the names, roles and the way you can reach them are the point of this page.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl border border-slate-200 text-center space-y-2">

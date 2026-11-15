@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Check } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
 import ClientGrid from '@/components/ClientGrid';
-import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
-  title: 'Our Clients | Construction Partner in Kenya | Jortin',
+  title: { absolute: 'Our Clients | Construction Partner in Kenya | Jortin' },
   description: 'Jortin Limited works with government agencies, NGOs, development partners and private clients, including Periurban Properties and Dapan Engineering.',
   alternates: {
     canonical: 'https://www.jortinlimited.co.ke/clients',
@@ -36,15 +36,6 @@ export default function ClientsPage() {
               Our clients range from property developers and engineering firms to architects and design studios. What they share is a need for a contractor who does what was agreed, documents it properly and communicates clearly from start to finish.
             </p>
           </div>
-          <div className="pt-8">
-            <JumpNav
-              items={[
-                { href: '#worked-with', label: 'Worked with' },
-                { href: '#who', label: 'Who we serve' },
-                { href: '#expect', label: 'What to expect' },
-              ]}
-            />
-          </div>
         </div>
       </section>
 
@@ -53,6 +44,7 @@ export default function ClientsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-brand-navy">Clients we have worked with</h2>
+            <p className="text-slate-600 text-base">Property developers, architects and engineering firms we have already worked with, plus the public and donor clients we are set up to serve.</p>
           </div>
           <ClientGrid />
         </div>
@@ -70,7 +62,7 @@ export default function ClientsPage() {
             <div className="bg-white p-8 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
               <h3 className="text-xl font-bold text-brand-navy">Government Agencies</h3>
               <p className="text-slate-600 text-base leading-relaxed">
-                National and county institutions delivering roads, water systems and public buildings. We are registered on IFMIS and PPIP and understand public procurement requirements, compliance thresholds and milestone reporting.
+                National and county institutions delivering roads, water systems and public buildings. We are <Link href="/about#compliance" className="font-semibold text-brand-navy hover:text-amber-800">registered on IFMIS and PPIP</Link> and understand public procurement requirements. We only tender where our NCA 8 road and water classes apply, or where the role is clearly within our capacity.
               </p>
             </div>
             <div className="bg-white p-8 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
@@ -82,7 +74,7 @@ export default function ClientsPage() {
             <div className="bg-white p-8 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
               <h3 className="text-xl font-bold text-brand-navy">Development Partners</h3>
               <p className="text-slate-600 text-base leading-relaxed">
-                Donor-funded projects that require international procurement standards, rigorous documentation, environmental and social safeguards and monitoring and evaluation support.
+                Donor-funded projects that require international procurement standards, rigorous documentation, environmental and social safeguards and <Link href="/services/consulting" className="font-semibold text-brand-navy underline decoration-amber-400 underline-offset-2">monitoring and evaluation</Link> support.
               </p>
             </div>
             <div className="bg-white p-8 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
@@ -113,7 +105,7 @@ export default function ClientsPage() {
               <span className="p-1 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-0.5">
                 <Check className="w-4 h-4" />
               </span>
-              <span className="text-base text-slate-800 font-medium">Engineer-led quality control and sign-off on site</span>
+              <Link href="/team" className="text-base text-slate-800 font-medium">Engineer-led quality control and sign-off on site</Link>
             </div>
             <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="p-1 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-0.5">
@@ -125,7 +117,7 @@ export default function ClientsPage() {
               <span className="p-1 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-0.5">
                 <Check className="w-4 h-4" />
               </span>
-              <span className="text-base text-slate-800 font-medium">Full compliance with NCA, KRA, NEMA and OSHA requirements</span>
+              <span className="text-base text-slate-800 font-medium">NCA 8 for road works and water works, plus KRA, NEMA and OSHA practice on site. We do not claim a building-works class.</span>
             </div>
             <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="p-1 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-0.5">

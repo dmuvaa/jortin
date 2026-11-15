@@ -525,7 +525,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="lg:col-span-1 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-                <Link href="/compliance" className="btn-gold text-center">
+                <Link href="/about#compliance" className="btn-gold text-center">
                   See Registration &amp; Compliance
                 </Link>
                 <Link href="/contact?enquiry=documents" className="btn-outline-navy text-center">
@@ -557,7 +557,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CLOSING CTA */}
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">Led by experienced directors</h2>
+          <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+            Jortin Limited is led by Karithi John, Managing Director, with more than 20 years of experience and a Master&apos;s in Strategic Planning, and Eng. Martin Mutuma, Technical Director, a JKUAT-trained civil and structural engineer with more than 8 years of practice. Together they bring over 30 years of combined experience to every contract.
+          </p>
+          <Link href="/team" className="inline-flex items-center gap-2 font-bold text-brand-navy hover:text-amber-600">
+            <span>Meet the Team</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       <ClosingCTA />
     </>
   );

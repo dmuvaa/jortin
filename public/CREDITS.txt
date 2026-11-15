@@ -125,7 +125,7 @@ projects/project-process.jpg
 Logos, favicon and client badges: original artwork for this pack (text and geometric shapes only; client badges are text, not the clients' real logos).
 
 Company site photographs (Jortin Limited's own work, not stock):
-  water-tower.jpg — from public/images/new/IMG_20251117_122034.jpg
-  column-formwork.jpg — from public/images/new/1729592047006.jpg
-  house-structure.jpg — from public/images/new/1729577165559.jpg
-  house-progress.jpg and house-complete.jpg — extracted from public/images/new/SITE PHOTO.pdf (APPENDIX F site photos)
+  water-tower.jpg : from public/images/new/IMG_20251117_122034.jpg
+  column-formwork.jpg : from public/images/new/1729592047006.jpg
+  house-structure.jpg : from public/images/new/1729577165559.jpg
+  house-progress.jpg and house-complete.jpg : extracted from public/images/new/SITE PHOTO.pdf (APPENDIX F site photos)

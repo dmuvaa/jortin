@@ -10,7 +10,7 @@ export default function FloatingWhatsApp() {
       href={whatsappUrl} 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-105 group focus:outline-none focus:ring-4 focus:ring-emerald-400"
+      className="fixed bottom-6 right-6 z-40 h-14 w-14 bg-[#128C7E] hover:bg-[#0E7A6E] text-white rounded-full shadow-[0_8px_24px_rgba(18,140,126,0.4)] flex items-center justify-center transition-transform hover:scale-105 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5A93C] focus-visible:ring-offset-2"
       aria-label="Chat directly on WhatsApp with Jortin Limited"
     >
       <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">

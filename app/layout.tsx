@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
@@ -79,7 +78,6 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <TopBar />
         <Navbar />
 
         <main id="main-content" className="flex-grow">

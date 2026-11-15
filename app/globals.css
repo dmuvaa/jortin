@@ -120,48 +120,57 @@ body {
   gap: 0.25rem;
 }
 
-/* Button micro-interactions */
-.btn-gold {
-  background-color: var(--color-brand-gold);
-  color: #0b1f3b;
-  font-weight: 700;
+/* Buttons: 8px radius, equal 48px height, gold focus ring */
+.btn-gold,
+.btn-outline-white,
+.btn-outline-navy,
+.btn-whatsapp {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  min-height: 48px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(229, 169, 60, 0.25);
+  height: 48px;
+  padding: 0 1.25rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid transparent;
+  font-weight: 700;
+  line-height: 1;
   text-decoration: none;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
-.btn-gold:hover {
-  background-color: var(--color-brand-gold-hover);
+.btn-gold:focus-visible,
+.btn-outline-white:focus-visible,
+.btn-outline-navy:focus-visible,
+.btn-whatsapp:focus-visible {
+  outline: 2px solid #e5a93c;
+  outline-offset: 2px;
 }
 
 .btn-gold:active,
 .btn-outline-white:active,
-.btn-outline-navy:active {
+.btn-outline-navy:active,
+.btn-whatsapp:active {
   transform: scale(0.98);
-  transition: transform 100ms ease-out;
+}
+
+.btn-gold {
+  background-color: var(--color-brand-gold);
+  color: #0b1f3b;
+  box-shadow: 0 4px 10px -2px rgba(229, 169, 60, 0.45);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-brand-gold-hover);
+  box-shadow: 0 6px 14px -2px rgba(209, 148, 39, 0.5);
 }
 
 .btn-outline-white {
   background-color: transparent;
   color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  min-height: 48px;
-  transition: all 0.2s ease;
-  text-decoration: none;
 }
 
 .btn-outline-white:hover {
@@ -172,22 +181,24 @@ body {
 .btn-outline-navy {
   background-color: transparent;
   color: #0b1f3b;
-  border: 1.5px solid #0b1f3b;
+  border-color: #0b1f3b;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  min-height: 48px;
-  transition: all 0.2s ease;
-  text-decoration: none;
 }
 
 .btn-outline-navy:hover {
   background-color: #0b1f3b;
   color: #ffffff;
+}
+
+.btn-whatsapp {
+  background-color: #128c7e;
+  color: #ffffff;
+  box-shadow: 0 4px 10px -2px rgba(18, 140, 126, 0.4);
+}
+
+.btn-whatsapp:hover {
+  background-color: #0e7a6e;
+  box-shadow: 0 6px 14px -2px rgba(14, 122, 110, 0.5);
 }
 
 /* Card hover effect */

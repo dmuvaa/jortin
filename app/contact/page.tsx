@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { MapPin, Mail, Phone, Clock, MessageSquare, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import QuoteForm from '@/components/QuoteForm';
-import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
-  title: 'Request a Construction Quote | Jortin Ongata Rongai',
+  title: { absolute: 'Request a Construction Quote | Jortin Ongata Rongai' },
   description: 'Request a quote from Jortin Limited, Ongata Business Centre, Magadi Road, Ongata Rongai. Call 0722 902 688 or email jortinlimited@gmail.com.',
   alternates: {
     canonical: 'https://www.jortinlimited.co.ke/contact',
@@ -35,14 +35,6 @@ export default function ContactPage() {
               Planning a building, road, water or structural project? Share a few details and our engineering team will come back to you with clear next steps, whether that is a site visit, a BOQ or a full proposal.
             </p>
           </div>
-          <div className="pt-8">
-            <JumpNav
-              items={[
-                { href: '#quote', label: 'Quote' },
-                { href: '#visit', label: 'Visit' },
-              ]}
-            />
-          </div>
         </div>
       </section>
 
@@ -52,7 +44,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
             {/* Form Left (7 Cols) */}
-            <div id="quote" className="lg:col-span-7">
+            <div id="quote" className="lg:col-span-7 space-y-4">
+              <p className="text-sm text-slate-600">
+                Not sure which service you need? <Link href="/services" className="font-semibold text-brand-navy hover:text-amber-800">See the nine service lines</Link>. Registration and certificates are on the <Link href="/about#compliance" className="font-semibold text-brand-navy hover:text-amber-800">about page</Link>.
+              </p>
               <Suspense fallback={<div className="p-8 bg-white rounded-2xl border border-slate-200">Loading quote form...</div>}>
                 <QuoteForm />
               </Suspense>
@@ -126,7 +121,7 @@ export default function ContactPage() {
                     href="https://wa.me/254722902688?text=Hello%20Jortin%20Limited%2C%20I%20found%20you%20through%20your%20website.%20I%20would%20like%20to%20discuss%20a%20project." 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="btn-gold flex-1 text-center text-sm"
+                    className="btn-whatsapp flex-1 text-center text-sm"
                   >
                     Chat on WhatsApp
                   </a>
