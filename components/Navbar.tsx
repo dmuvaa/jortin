@@ -6,6 +6,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 
+const phoneDisplay = '0722 902 688';
+const phoneHref = 'tel:+254722902688';
+const whatsappHref =
+  'https://wa.me/254722902688?text=Hello%20Jortin%20Limited%2C%20I%20found%20you%20through%20your%20website.%20I%20would%20like%20to%20discuss%20a%20project.';
+
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -166,7 +171,7 @@ export default function Navbar() {
             Request a Quote
           </Link>
           <a
-            href="https://wa.me/254722902688?text=Hello%20Jortin%20Limited%2C%20I%20found%20you%20through%20your%20website.%20I%20would%20like%20to%20discuss%20a%20project."
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-700 transition-colors"
@@ -174,7 +179,7 @@ export default function Navbar() {
             Chat on WhatsApp
           </a>
           <div className="text-xs text-slate-500 text-center pt-2">
-            Call: <a href="tel:+254722902688" className="text-brand-navy font-semibold">0722 902 688</a>
+            <a href={phoneHref} className="text-brand-navy font-semibold">{phoneDisplay}</a>
           </div>
         </div>
       </div>

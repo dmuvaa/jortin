@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
   title: 'Construction Projects in Kenya | Jortin Limited',
@@ -34,9 +35,17 @@ export default function ProjectsPage() {
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
               Every project we take on is shaped by its site, its funder and its users. This page shows the type and standard of work we deliver across our four core sectors. Detailed project references, including client contacts where permitted, are available to procurement teams on request.
             </p>
-            <p className="text-xs text-slate-400 italic">
-              * Images on this page are representative of the type of work we undertake and may include stock or partner photography. Project references are provided on request.
-            </p>
+          </div>
+          <div className="pt-8">
+            <JumpNav
+              items={[
+                { href: '#building', label: 'Building' },
+                { href: '#roads', label: 'Roads' },
+                { href: '#water', label: 'Water' },
+                { href: '#structural', label: 'Structural' },
+                { href: '#process', label: 'Process' },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -46,11 +55,8 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
           {/* Building */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div id="building" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-4">
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded border border-amber-200">
-                Sector 01 · Building
-              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Building Construction</h2>
               <p className="text-slate-600 text-base leading-relaxed">
                 Residential and commercial buildings delivered from substructure to finishing. Our building work is led by engineering, so structural integrity, accurate quantities and clean finishes go together.
@@ -65,25 +71,22 @@ export default function ProjectsPage() {
                 </ul>
               </div>
               <div className="pt-2">
-                <Link href="/services#building" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
+                <Link href="/services/building" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
                   View building capabilities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative aspect-[4/3]">
-              <Image src="/images/projects/project-building.jpg" alt="Representative image of a multi-storey building under construction in Kenya" fill className="object-cover" />
+              <Image src="/images/house-complete.jpg" alt="Completed two-storey residential building" fill className="object-cover" />
             </div>
           </div>
 
           {/* Roads */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
+          <div id="roads" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
             <div className="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative aspect-[4/3]">
-              <Image src="/images/projects/project-roads.jpg" alt="Representative image of road works and drainage construction on a Kenyan road" fill className="object-cover" />
+              <Image src="/images/projects/project-roads.jpg" alt="Representative image of road works and drainage construction" fill className="object-cover" />
             </div>
             <div className="order-1 lg:order-2 space-y-4">
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded border border-amber-200">
-                Sector 02 · Roads (NCA 8)
-              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Roads &amp; Civil Works</h2>
               <p className="text-slate-600 text-base leading-relaxed">
                 As an NCA 8 registered road works contractor, we undertake road construction and rehabilitation, access roads and the drainage that protects them. We plan works to keep communities moving and to meet the reporting standards of public and donor clients.
@@ -98,7 +101,7 @@ export default function ProjectsPage() {
                 </ul>
               </div>
               <div className="pt-2">
-                <Link href="/services#roads" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
+                <Link href="/services/roads" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
                   View road works capabilities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -106,11 +109,8 @@ export default function ProjectsPage() {
           </div>
 
           {/* Water */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
+          <div id="water" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
             <div className="space-y-4">
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded border border-amber-200">
-                Sector 03 · Water (NCA 8)
-              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Water &amp; Sanitation</h2>
               <p className="text-slate-600 text-base leading-relaxed">
                 Water projects demand technical skill and community sensitivity. As an NCA 8 registered water works contractor, we deliver borehole drilling and equipping, reticulation, storage and sanitation for institutions, communities and private clients.
@@ -125,25 +125,22 @@ export default function ProjectsPage() {
                 </ul>
               </div>
               <div className="pt-2">
-                <Link href="/services#water" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
+                <Link href="/services/water" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
                   View water capabilities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative aspect-[4/3]">
-              <Image src="/images/projects/project-water.jpg" alt="Representative image of a borehole with water tanks serving a community in Kenya" fill className="object-cover" />
+              <Image src="/images/water-tower.jpg" alt="Steel water tower and tank on a planted site" fill className="object-cover" />
             </div>
           </div>
 
           {/* Structural */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
+          <div id="structural" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 border-t border-slate-100">
             <div className="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative aspect-[4/3]">
-              <Image src="/images/projects/project-structural.jpg" alt="Representative image of rebar cages and formwork for a reinforced concrete foundation" fill className="object-cover" />
+              <Image src="/images/column-formwork.jpg" alt="Reinforced concrete columns in formwork on a building site" fill className="object-cover" />
             </div>
             <div className="order-1 lg:order-2 space-y-4">
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded border border-amber-200">
-                Sector 04 · Structural Engineering
-              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy">Structural Works</h2>
               <p className="text-slate-600 text-base leading-relaxed">
                 Structural works are where engineering leadership matters most. Our Technical Director, a JKUAT-trained civil and structural engineer, oversees design and site checks on foundations, reinforced concrete and structural steel.
@@ -158,7 +155,7 @@ export default function ProjectsPage() {
                 </ul>
               </div>
               <div className="pt-2">
-                <Link href="/services#structural" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
+                <Link href="/services/structural" className="text-sm font-bold text-brand-navy hover:text-amber-600 inline-flex items-center gap-1.5">
                   View structural capabilities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -169,10 +166,9 @@ export default function ProjectsPage() {
       </section>
 
       {/* HOW EVERY PROJECT IS DELIVERED (6 STEPS) */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section id="process" className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-600">Our Process</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy">How every project is delivered</h2>
             <p className="text-slate-600 text-base">A disciplined 6-stage lifecycle ensuring quality, cost control and safety from day one.</p>
           </div>
@@ -188,9 +184,6 @@ export default function ProjectsPage() {
               />
             </div>
             <div className="lg:col-span-7 p-6 sm:p-8 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded border border-amber-200">
-                Quality Assurance
-              </span>
               <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy">
                 Zero-tolerance inspection at every critical pour
               </h3>

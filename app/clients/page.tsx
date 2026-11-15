@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Check } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
+import ClientGrid from '@/components/ClientGrid';
+import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
   title: 'Our Clients | Construction Partner in Kenya | Jortin',
@@ -36,40 +36,30 @@ export default function ClientsPage() {
               Our clients range from property developers and engineering firms to architects and design studios. What they share is a need for a contractor who does what was agreed, documents it properly and communicates clearly from start to finish.
             </p>
           </div>
+          <div className="pt-8">
+            <JumpNav
+              items={[
+                { href: '#worked-with', label: 'Worked with' },
+                { href: '#who', label: 'Who we serve' },
+                { href: '#expect', label: 'What to expect' },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
       {/* LOGO GRID */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded border border-amber-200">Track Record</span>
+      <section id="worked-with" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-brand-navy">Clients we have worked with</h2>
-            <p className="text-slate-600 text-base">We collaborate with forward-thinking organisations across the built environment.</p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center">
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center font-bold text-slate-800 h-32 flex items-center justify-center hover-lift">
-              <Image src="/images/client-periurban.png" alt="Periurban Properties logo, a client of Jortin Limited" width={160} height={60} className="max-h-20 w-auto object-contain" />
-            </div>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center font-bold text-slate-800 h-32 flex items-center justify-center hover-lift">
-              <Image src="/images/client-dapan.png" alt="Dapan Engineering Limited logo, a client of Jortin Limited" width={160} height={60} className="max-h-20 w-auto object-contain" />
-            </div>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center font-bold text-slate-800 h-32 flex items-center justify-center hover-lift">
-              <Image src="/images/client-bn-architects.png" alt="BN Architects logo, a client of Jortin Limited" width={160} height={60} className="max-h-20 w-auto object-contain" />
-            </div>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center font-bold text-slate-800 h-32 flex items-center justify-center hover-lift">
-              <Image src="/images/client-art-tic.png" alt="ART.TIC Studio logo, a client of Jortin Limited" width={160} height={60} className="max-h-20 w-auto object-contain" />
-            </div>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center font-bold text-slate-800 h-32 flex items-center justify-center hover-lift">
-              <Image src="/images/client-kirrn.png" alt="KIRRN LTD logo, a client of Jortin Limited" width={160} height={60} className="max-h-20 w-auto object-contain" />
-            </div>
-          </div>
+          <ClientGrid />
         </div>
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200">
+      <section id="who" className="py-20 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
             <h2 className="text-3xl font-extrabold text-brand-navy">Who we serve</h2>
@@ -106,7 +96,7 @@ export default function ClientsPage() {
       </section>
 
       {/* WHAT OUR CLIENTS CAN EXPECT */}
-      <section className="py-20 bg-white">
+      <section id="expect" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
             <h2 className="text-3xl font-extrabold text-brand-navy">What our clients can expect</h2>

@@ -15,6 +15,7 @@ import {
   Layers 
 } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
+import ClientGrid from '@/components/ClientGrid';
 
 export default function HomePage() {
   return (
@@ -37,12 +38,6 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-6">
-            {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-amber-400 text-xs sm:text-sm font-semibold tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-amber-400 pulse-badge" />
-              Construction Consultancy · Structural &amp; Civil Works · Building · Roads · Water Works
-            </div>
-
             {/* H1 */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
               Engineering-led construction for Kenya's <span className="text-brand-gold">roads, water</span> and <span className="text-brand-gold">buildings</span>
@@ -185,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3: WHAT WE DO (SERVICES) */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200">
+      <section id="services" className="py-20 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100/60 px-3 py-1 rounded-full">
@@ -208,13 +203,12 @@ export default function HomePage() {
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">01 · Engineering</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Consultancy &amp; Design</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Consultancy &amp; Design</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     Feasibility studies, accurate BOQs, structural design (BS 8110 / Eurocode 2) and tender-ready documents before breaking ground.
                   </p>
                 </div>
-                <Link href="/services#consultancy" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/consultancy" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -223,17 +217,16 @@ export default function HomePage() {
             {/* 2. Structural & Civil Works */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
               <div className="relative h-48 w-full">
-                <Image src="/images/structural-civil.jpg" alt="Reinforcement cages for a reinforced concrete foundation in Kenya" fill className="object-cover" />
+                <Image src="/images/column-formwork.jpg" alt="Reinforced concrete columns in formwork on a building site" fill className="object-cover" />
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">02 · Substructure &amp; Frame</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Structural &amp; Civil Works</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Structural &amp; Civil Works</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     Pad and strip foundations, reinforced concrete columns, beams, slabs, structural steel and rigorous formwork inspection.
                   </p>
                 </div>
-                <Link href="/services#structural" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/structural" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -242,17 +235,16 @@ export default function HomePage() {
             {/* 3. Building Construction */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
               <div className="relative h-48 w-full">
-                <Image src="/images/building-construction.jpg" alt="Multi-storey building under construction with tower cranes" fill className="object-cover" />
+                <Image src="/images/house-structure.jpg" alt="Two-storey block building under construction, with scaffolding" fill className="object-cover" />
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">03 · Commercial &amp; Residential</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Building Construction</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Building Construction</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     Residential homes, commercial blocks, renovations, walling, partitioning and high-standard interior and exterior finishes.
                   </p>
                 </div>
-                <Link href="/services#building" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/building" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -265,13 +257,12 @@ export default function HomePage() {
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">04 · NCA 8 Road Works</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Road Works &amp; Drainage</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Road Works &amp; Drainage</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     NCA 8 registered road rehabilitation, earthworks, grading, access driveways, drainage culverts and road safety structures.
                   </p>
                 </div>
-                <Link href="/services#roads" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/roads" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -280,17 +271,16 @@ export default function HomePage() {
             {/* 5. Water & Sanitation */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
               <div className="relative h-48 w-full">
-                <Image src="/images/water-sanitation.jpg" alt="Borehole drilling rig at a community water project in Kenya" fill className="object-cover" />
+                <Image src="/images/water-tower.jpg" alt="Steel water tower and tank on a planted site" fill className="object-cover" />
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">05 · NCA 8 Water Works</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Water &amp; Sanitation</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Water &amp; Sanitation</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     Borehole drilling, solar and pump equipping, water reticulation, storage towers and robust sanitation systems across Kenya.
                   </p>
                 </div>
-                <Link href="/services#water" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/water" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -303,13 +293,12 @@ export default function HomePage() {
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">06 · Building Services</span>
-                  <h3 className="text-xl font-bold text-brand-navy mt-1">Electrical &amp; Mechanical</h3>
+                  <h3 className="text-xl font-bold text-brand-navy">Electrical &amp; Mechanical</h3>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                     Building wiring, fittings, plumbing installations and MEP coordination integrated to eliminate rework and clashes.
                   </p>
                 </div>
-                <Link href="/services#electrical" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
+                <Link href="/services/electrical" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -529,7 +518,7 @@ export default function HomePage() {
                   Registered, compliant and ready to tender
                 </h2>
                 <p className="text-slate-700 text-base leading-relaxed">
-                  Procurement teams need certainty before they award a contract. Jortin Limited is registered with the National Construction Authority as an <strong className="text-brand-navy">NCA 8 contractor for Road Works and Water Works</strong>, valid until 31 July 2028. We hold a current <strong className="text-brand-navy">KRA Tax Compliance Certificate</strong> (valid to 26 August 2027) and are registered on government procurement platforms, including <strong className="text-brand-navy">IFMIS and PPIP</strong>.
+                  Procurement teams need certainty before they award a contract. Jortin Limited is an <strong className="text-brand-navy">NCA 8 contractor for road works and water works</strong>, holds a current <strong className="text-brand-navy">KRA tax compliance certificate</strong>, and is registered for public procurement. Certificates are available on request.
                 </p>
                 <p className="text-slate-600 text-sm">
                   Our documents are in order, current and available on request, so your evaluation moves faster.
@@ -549,34 +538,15 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 7: TRUSTED BY CLIENTS (LOGO GRID) */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section id="clients" className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
-              Trusted by clients across the industry
+              Clients we have worked with
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base">
-              Property developers, consulting engineering firms, architectural studios and commercial enterprises rely on our delivery.
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 text-sm h-28 hover-lift">
-              <Image src="/images/client-periurban.png" alt="Periurban Properties logo, a client of Jortin Limited" width={160} height={60} className="max-h-16 w-auto object-contain" />
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 text-sm h-28 hover-lift">
-              <Image src="/images/client-dapan.png" alt="Dapan Engineering Limited logo, a client of Jortin Limited" width={160} height={60} className="max-h-16 w-auto object-contain" />
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 text-sm h-28 hover-lift">
-              <Image src="/images/client-bn-architects.png" alt="BN Architects logo, a client of Jortin Limited" width={160} height={60} className="max-h-16 w-auto object-contain" />
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 text-sm h-28 hover-lift">
-              <Image src="/images/client-art-tic.png" alt="ART.TIC Studio logo, a client of Jortin Limited" width={160} height={60} className="max-h-16 w-auto object-contain" />
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 text-sm h-28 hover-lift">
-              <Image src="/images/client-kirrn.png" alt="KIRRN LTD logo, a client of Jortin Limited" width={160} height={60} className="max-h-16 w-auto object-contain" />
-            </div>
-          </div>
+          <ClientGrid linked />
 
           <div className="text-center mt-10">
             <Link href="/clients" className="inline-flex items-center gap-2 font-bold text-brand-navy hover:text-amber-600 transition-colors">

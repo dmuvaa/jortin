@@ -9,9 +9,7 @@ export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
   const [waLink, setWaLink] = useState('');
   const [service, setService] = useState('');
-  const [description, setDescription] = useState('');
-  const [clientType, setClientType] = useState('');
-  const [budget, setBudget] = useState('');
+  const [more, setMore] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
 
   // Pre-fill from query params
@@ -34,12 +32,10 @@ export default function QuoteForm() {
       setService(serviceMap[serviceParam] || serviceParam);
     }
 
-    if (enquiryParam) {
-      if (enquiryParam === 'documents') {
-        setDescription('Request for verified compliance certificates (NCA 8 Road Works, NCA 8 Water Works, KRA Tax Compliance Certificate, IFMIS / PPIP registrations) for upcoming tender evaluation.');
-      } else if (enquiryParam === 'references') {
-        setDescription('Request for detailed project references, client contact verifications, and structural engineering portfolio for evaluation.');
-      }
+    if (enquiryParam === 'documents') {
+      setMore('Please share the compliance documents for a tender.');
+    } else if (enquiryParam === 'references') {
+      setMore('Please share project references.');
     }
   }, [searchParams]);
 
@@ -63,23 +59,18 @@ export default function QuoteForm() {
     const data = new FormData(form);
     const fullName = data.get('full_name') as string;
     const org = data.get('organization') as string;
-    const cType = data.get('client_type') as string;
     const phone = data.get('phone') as string;
     const email = data.get('email') as string;
     const sNeeded = data.get('service_needed') as string;
     const location = data.get('location') as string;
-    const bGet = data.get('budget') as string;
-    const desc = data.get('description') as string;
+    const note = data.get('more') as string;
 
-    const message = `Hello Jortin Limited, I submitted a project quote request on your website:
-- Name: ${fullName} ${org ? `(${org})` : ''}
-- Client Type: ${cType}
-- Service Needed: ${sNeeded}
-- Project Location: ${location}
-- Estimated Budget: ${bGet || 'Not specified'}
-- Scope Description: ${desc}
+    const message = `Hello Jortin Limited, I submitted a quote request on your website:
+- Name: ${fullName}${org ? ` (${org})` : ''}
+- Service: ${sNeeded}
+- Location: ${location || 'Not specified'}
 - Phone: ${phone}
-- Email: ${email}`;
+- Email: ${email}${note ? `\n- More information: ${note}` : ''}`;
 
     setWaLink(`https://wa.me/254722902688?text=${encodeURIComponent(message)}`);
     setSubmitted(true);
@@ -89,9 +80,6 @@ export default function QuoteForm() {
     <div className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-6">
       <div>
         <h2 className="text-2xl font-bold text-brand-navy">Tell us about your project</h2>
-        <p className="text-slate-600 text-sm mt-1">
-          The more we know, the better our first response. Fill in what you can; fields marked <span className="text-red-500 font-bold">*</span> are required. Tender documents and drawings can be shared by email after we respond.
-        </p>
       </div>
 
       {submitted ? (
@@ -162,34 +150,6 @@ export default function QuoteForm() {
               className="form-input"
               placeholder="e.g. County Department, NGO name or Company"
             />
-          </div>
-
-          {/* Client Type */}
-          <div className="field">
-            <label htmlFor="client-type" className="block text-sm font-semibold text-slate-800 mb-1">
-              Client Type <span className="text-red-500">*</span>
-            </label>
-            <select
-              id="client-type"
-              name="client_type"
-              required
-              value={clientType}
-              onChange={(e) => setClientType(e.target.value)}
-              className="form-select"
-              onBlur={(e) => syncAria(e.currentTarget)}
-              onInput={(e) => syncAria(e.currentTarget)}
-              aria-describedby="client-type-error"
-            >
-              <option value="" disabled>Select client type</option>
-              <option value="Government agency">Government agency</option>
-              <option value="NGO">NGO</option>
-              <option value="Development partner / donor project">Development partner / donor project</option>
-              <option value="Private company">Private company</option>
-              <option value="Individual">Individual</option>
-            </select>
-            <div id="client-type-error" className="field-error-msg">
-              <AlertCircle className="w-3.5 h-3.5" /> Please select your client type.
-            </div>
           </div>
 
           {/* Phone & Email */}
@@ -269,98 +229,38 @@ export default function QuoteForm() {
             </div>
           </div>
 
-          {/* Project Location & Budget */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="field">
-              <label htmlFor="location" className="block text-sm font-semibold text-slate-800 mb-1">
-                Project Location <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="location"
-                name="location"
-                required
-                className="form-input"
-                placeholder="e.g. Ongata Rongai, Kajiado / Nairobi"
-                onBlur={(e) => syncAria(e.currentTarget)}
-                onInput={(e) => syncAria(e.currentTarget)}
-                aria-describedby="location-error"
-              />
-              <div id="location-error" className="field-error-msg">
-                <AlertCircle className="w-3.5 h-3.5" /> Please provide the project location.
-              </div>
-            </div>
-            <div className="field">
-              <label htmlFor="budget" className="block text-sm font-semibold text-slate-800 mb-1">
-                Estimated Budget (KES) <span className="text-xs text-slate-500 font-normal">(Optional)</span>
-              </label>
-              <select
-                id="budget"
-                name="budget"
-                value={budget}
-                onChange={(e) => setBudget(e.target.value)}
-                className="form-select"
-              >
-                <option value="">Select budget range</option>
-                <option value="Under 1M">Under 1M</option>
-                <option value="1M to 5M">1M to 5M</option>
-                <option value="5M to 20M">5M to 20M</option>
-                <option value="20M to 50M">20M to 50M</option>
-                <option value="Above 50M">Above 50M</option>
-                <option value="Not yet known">Not yet known</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Preferred Start Date */}
           <div className="field">
-            <label htmlFor="start-date" className="block text-sm font-semibold text-slate-800 mb-1">
-              Preferred Start Date <span className="text-xs text-slate-500 font-normal">(Optional)</span>
+            <label htmlFor="location" className="block text-sm font-semibold text-slate-800 mb-1">
+              Project Location <span className="text-red-500">*</span>
             </label>
             <input
-              type="date"
-              id="start-date"
-              name="start_date"
-              className="form-input"
-            />
-          </div>
-
-          {/* Project Description */}
-          <div className="field">
-            <label htmlFor="project-description" className="block text-sm font-semibold text-slate-800 mb-1">
-              Project Description <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              id="project-description"
-              name="description"
+              type="text"
+              id="location"
+              name="location"
               required
-              rows={4}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              className="form-textarea"
-              placeholder="Briefly describe the scope, site and any deadlines"
+              className="form-input"
+              placeholder="e.g. Ongata Rongai, Kajiado"
               onBlur={(e) => syncAria(e.currentTarget)}
               onInput={(e) => syncAria(e.currentTarget)}
-              aria-describedby="description-error"
+              aria-describedby="location-error"
             />
-            <div id="description-error" className="field-error-msg">
-              <AlertCircle className="w-3.5 h-3.5" /> Please provide a brief project description.
+            <div id="location-error" className="field-error-msg">
+              <AlertCircle className="w-3.5 h-3.5" /> Please provide the project location.
             </div>
           </div>
 
-          {/* How did you hear about us */}
           <div className="field">
-            <label htmlFor="source" className="block text-sm font-semibold text-slate-800 mb-1">
-              How did you hear about us? <span className="text-xs text-slate-500 font-normal">(Optional)</span>
+            <label htmlFor="more" className="block text-sm font-semibold text-slate-800 mb-1">
+              More information
             </label>
-            <select id="source" name="source" className="form-select">
-              <option value="">Select an option</option>
-              <option value="Google search">Google search</option>
-              <option value="Referral">Referral / Recommendation</option>
-              <option value="Social media">Social media</option>
-              <option value="Tender portal">Tender portal (IFMIS / PPIP)</option>
-              <option value="Other">Other</option>
-            </select>
+            <textarea
+              id="more"
+              name="more"
+              rows={4}
+              value={more}
+              onChange={(e) => setMore(e.target.value)}
+              className="form-textarea"
+            />
           </div>
 
           {/* Consent */}

@@ -62,7 +62,7 @@ export default function AboutPage() {
                 From consultancy to completed structures
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-                Jortin Limited was incorporated in Kenya on 5 February 2025 (Company No. PVT-GYU53RVX). The company is new; the experience behind it is not. Our directors bring more than 30 years of combined experience in strategic planning, civil and structural engineering, and project delivery.
+                Jortin Limited is a Kenyan-owned construction company. The company is new; the experience behind it is not. Our directors bring more than 30 years of combined experience in strategic planning, civil and structural engineering, and project delivery.
               </p>
               <p className="text-slate-600 text-base leading-relaxed">
                 We were founded on a simple observation: clients in Kenya, whether a county government, an NGO or a private developer, too often have to manage separate consultants, contractors and suppliers who do not talk to each other. Jortin brings those disciplines together, so the person who designs your structure is part of the team that builds and supervises it.
@@ -72,8 +72,8 @@ export default function AboutPage() {
                 <h3 className="text-sm font-bold uppercase tracking-wider text-brand-navy">At a glance</h3>
                 <ul className="space-y-2 text-sm text-slate-700">
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> Fully Kenyan-owned and managed</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> NCA 8 registered for Road Works (95311/R/0925) and Water Works (95311/W/0925)</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> KRA Tax Compliance Certificate valid to 26 August 2027</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> NCA 8 registered for road works and water works</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> KRA tax compliant</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> Registered on government procurement platforms IFMIS and PPIP</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" /> Headquartered at Ongata Business Centre, Magadi Road, Ongata Rongai</li>
                 </ul>

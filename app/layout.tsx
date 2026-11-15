@@ -39,22 +39,22 @@ export const metadata: Metadata = {
     locale: 'en_KE',
     url: 'https://www.jortinlimited.co.ke',
     siteName: 'Jortin Limited',
-    title: "Jortin Limited | Building Kenya's Infrastructure, Right",
-    description: 'Kenyan-owned, NCA 8 registered for road and water works. Consultancy, structural and civil works, building and project management from Ongata Rongai.',
+    title: 'Jortin Limited',
+    description: 'Construction company in Ongata Rongai for roads, water, buildings and structural works.',
     images: [
       {
-        url: '/images/hero-home-bg.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Jortin Limited Construction in Kenya',
+        url: '/images/house-complete.jpg',
+        width: 2160,
+        height: 960,
+        alt: 'Completed two-storey residential building',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jortin Limited | Building Kenya's Infrastructure, Right",
-    description: 'Kenyan-owned, NCA 8 registered for road and water works. Consultancy, structural and civil works, building and project management.',
-    images: ['/images/hero-home-bg.jpg'],
+    title: 'Jortin Limited',
+    description: 'Construction company in Ongata Rongai for roads, water, buildings and structural works.',
+    images: ['/images/house-complete.jpg'],
   },
 };
 

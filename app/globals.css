@@ -139,8 +139,13 @@ body {
 
 .btn-gold:hover {
   background-color: var(--color-brand-gold-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px -2px rgba(229, 169, 60, 0.35);
+}
+
+.btn-gold:active,
+.btn-outline-white:active,
+.btn-outline-navy:active {
+  transform: scale(0.98);
+  transition: transform 100ms ease-out;
 }
 
 .btn-outline-white {
@@ -162,7 +167,6 @@ body {
 .btn-outline-white:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
-  transform: translateY(-1px);
 }
 
 .btn-outline-navy {
@@ -184,7 +188,6 @@ body {
 .btn-outline-navy:hover {
   background-color: #0b1f3b;
   color: #ffffff;
-  transform: translateY(-1px);
 }
 
 /* Card hover effect */
@@ -203,4 +206,69 @@ body {
 }
 .pulse-badge {
   animation: soft-pulse 2.5s infinite ease-in-out;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+.page-nav {
+  position: sticky;
+  top: 5rem;
+  z-index: 30;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.page-nav-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  scrollbar-width: none;
+}
+
+.page-nav-track::-webkit-scrollbar {
+  display: none;
+}
+
+.page-nav a {
+  color: #64748b;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.page-nav a[aria-current="true"] {
+  color: #0b1f3b;
+  border-bottom-color: #0b1f3b;
+}
+
+.page-nav a:hover {
+  color: #0b1f3b;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.enter {
+  animation: enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .enter,
+  .pulse-badge,
+  .hover-lift,
+  #mobile-menu-drawer {
+    animation: none;
+    transition: none;
+  }
 }

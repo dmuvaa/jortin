@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { MapPin, Mail, Phone, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import QuoteForm from '@/components/QuoteForm';
+import JumpNav from '@/components/JumpNav';
 
 export const metadata: Metadata = {
   title: 'Request a Construction Quote | Jortin Ongata Rongai',
@@ -34,6 +35,14 @@ export default function ContactPage() {
               Planning a building, road, water or structural project? Share a few details and our engineering team will come back to you with clear next steps, whether that is a site visit, a BOQ or a full proposal.
             </p>
           </div>
+          <div className="pt-8">
+            <JumpNav
+              items={[
+                { href: '#quote', label: 'Quote' },
+                { href: '#visit', label: 'Visit' },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
@@ -43,7 +52,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
             {/* Form Left (7 Cols) */}
-            <div className="lg:col-span-7">
+            <div id="quote" className="lg:col-span-7">
               <Suspense fallback={<div className="p-8 bg-white rounded-2xl border border-slate-200">Loading quote form...</div>}>
                 <QuoteForm />
               </Suspense>
@@ -125,7 +134,7 @@ export default function ContactPage() {
               </div>
 
               {/* Interactive Google Maps Embed */}
-              <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+              <div id="visit" className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
                 <div className="font-bold text-sm text-brand-navy px-2">Map Location: Ongata Business Centre</div>
                 <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
                   <iframe 

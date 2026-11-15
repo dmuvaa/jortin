@@ -24,7 +24,6 @@ export default function Footer() {
               Jortin Limited is a fully Kenyan-owned construction company in Ongata Rongai, Kajiado County. We deliver consultancy, structural and civil works, building, roads and water works for government, NGOs, development partners and private clients.
             </p>
             <div className="pt-2 space-y-1.5 text-xs text-slate-300">
-              <div className="font-medium text-amber-400">Company No. PVT-GYU53RVX</div>
               <div className="flex flex-wrap gap-2 pt-1">
                 <span className="inline-flex items-center px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 text-[11px] font-medium">NCA 8 Road Works</span>
                 <span className="inline-flex items-center px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 text-[11px] font-medium">NCA 8 Water Works</span>
@@ -52,15 +51,15 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4">Services</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/services#consultancy" className="text-slate-300 hover:text-white transition-colors">Consultancy &amp; Design</Link></li>
-              <li><Link href="/services#structural" className="text-slate-300 hover:text-white transition-colors">Structural &amp; Civil Works</Link></li>
-              <li><Link href="/services#building" className="text-slate-300 hover:text-white transition-colors">Building Construction</Link></li>
-              <li><Link href="/services#roads" className="text-slate-300 hover:text-white transition-colors">Road Works &amp; Drainage</Link></li>
-              <li><Link href="/services#water" className="text-slate-300 hover:text-white transition-colors">Boreholes &amp; Water Works</Link></li>
-              <li><Link href="/services#electrical" className="text-slate-300 hover:text-white transition-colors">Electrical &amp; Mechanical</Link></li>
-              <li><Link href="/services#project-management" className="text-slate-300 hover:text-white transition-colors">Project Management</Link></li>
-              <li><Link href="/services#procurement" className="text-slate-300 hover:text-white transition-colors">Procurement &amp; Maintenance</Link></li>
-              <li><Link href="/services#consulting" className="text-slate-300 hover:text-white transition-colors">Strategic Advisory &amp; M&amp;E</Link></li>
+              <li><Link href="/services/consultancy" className="text-slate-300 hover:text-white transition-colors">Consultancy &amp; Design</Link></li>
+              <li><Link href="/services/structural" className="text-slate-300 hover:text-white transition-colors">Structural &amp; Civil Works</Link></li>
+              <li><Link href="/services/building" className="text-slate-300 hover:text-white transition-colors">Building Construction</Link></li>
+              <li><Link href="/services/roads" className="text-slate-300 hover:text-white transition-colors">Road Works &amp; Drainage</Link></li>
+              <li><Link href="/services/water" className="text-slate-300 hover:text-white transition-colors">Boreholes &amp; Water Works</Link></li>
+              <li><Link href="/services/electrical" className="text-slate-300 hover:text-white transition-colors">Electrical &amp; Mechanical</Link></li>
+              <li><Link href="/services/project-management" className="text-slate-300 hover:text-white transition-colors">Project Management</Link></li>
+              <li><Link href="/services/procurement" className="text-slate-300 hover:text-white transition-colors">Procurement &amp; Maintenance</Link></li>
+              <li><Link href="/services/consulting" className="text-slate-300 hover:text-white transition-colors">Consulting &amp; Project Management</Link></li>
             </ul>
           </div>
 
@@ -91,7 +90,7 @@ export default function Footer() {
 
         {/* Footer Bottom Legal Line */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4">
-          <p>© 2026 Jortin Limited. Company No. PVT-GYU53RVX. All rights reserved.</p>
+          <p>© 2026 Jortin Limited. All rights reserved.</p>
           <div className="flex items-center gap-4 flex-wrap">
             <span>Ongata Rongai, Kenya</span>
             <span>•</span>
