@@ -176,10 +176,3 @@ export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
 
-export const clients = [
-  { slug: 'periurban', name: 'Periurban Properties', field: 'Real estate' },
-  { slug: 'dapan', name: 'Dapan Engineering', field: 'Structural and construction' },
-  { slug: 'bn-architects', name: 'BN Architects', field: 'Architecture' },
-  { slug: 'art-tic', name: 'ART.TIC Studio', field: 'Architectural design' },
-  { slug: 'kirrn', name: 'KIRRN', field: 'Real estate' },
-];

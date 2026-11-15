@@ -466,7 +466,7 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Issue the deliverable', text: 'The final product is formatted so you can submit, circulate or implement it without another rewrite pass.' },
       { title: 'Close-out note', text: 'We record what was delivered, assumptions used, and optional follow-on such as bid clarifications or a later M&E review.' },
     ],
-    casesIntro: 'Organisations listed on the Clients page are not automatically consulting references.',
+    casesIntro: 'Named organisations are not automatically consulting references until we have permission to publish them.',
     cases: [
       'Tender writing for a road, water or building-related bid on the Kenyan public procurement system, including IFMIS or PPIP opportunities where the client is eligible.',
       'A strategic plan facilitation for a small institution or implementing organisation that needs a clear three-year direction and a work plan.',

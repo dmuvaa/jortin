@@ -41,7 +41,6 @@ export default function Footer() {
               <li><Link href="/services" className="text-slate-300 hover:text-white transition-colors">Our Services</Link></li>
               <li><Link href="/projects" className="text-slate-300 hover:text-white transition-colors">Sector Projects</Link></li>
               <li><Link href="/team" className="text-slate-300 hover:text-white transition-colors">Meet the Team</Link></li>
-              <li><Link href="/clients" className="text-slate-300 hover:text-white transition-colors">Clients &amp; Partners</Link></li>
               <li><Link href="/contact" className="text-slate-300 hover:text-white transition-colors">Request a Quote</Link></li>
             </ul>
           </div>

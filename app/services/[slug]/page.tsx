@@ -30,7 +30,6 @@ const phrases: { phrase: string; href: string; external?: boolean }[] = [
   { phrase: 'Structural and Civil Works', href: '/services/structural' },
   { phrase: 'Procurement and Maintenance', href: '/services/procurement' },
   { phrase: 'NCA contractor search portal', href: 'https://nca.go.ke', external: true },
-  { phrase: 'Clients page', href: '/clients' },
 ];
 
 function SectionHeading({ id, children, kicker }: { id?: string; children: ReactNode; kicker?: string }) {

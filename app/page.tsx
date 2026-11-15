@@ -15,7 +15,6 @@ import {
   Layers 
 } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
-import ClientGrid from '@/components/ClientGrid';
 
 export default function HomePage() {
   return (
@@ -533,26 +532,6 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 7: TRUSTED BY CLIENTS (LOGO GRID) */}
-      <section id="clients" className="py-20 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
-              Clients we have worked with
-            </h2>
-          </div>
-
-          <ClientGrid linked />
-
-          <div className="text-center mt-10">
-            <Link href="/clients" className="inline-flex items-center gap-2 font-bold text-brand-navy hover:text-amber-600 transition-colors">
-              <span>Meet Our Clients &amp; Sector Partners</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>

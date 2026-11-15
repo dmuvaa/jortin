@@ -7,30 +7,26 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { services } from '@/lib/services';
 
-const phoneDisplay = '0722 902 688';
-const phoneHref = 'tel:+254722902688';
-const whatsappHref =
-  'https://wa.me/254722902688?text=Hello%20Jortin%20Limited%2C%20I%20found%20you%20through%20your%20website.%20I%20would%20like%20to%20discuss%20a%20project.';
-
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Team', href: '/team' },
-  { label: 'Clients', href: '/clients' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
 
   // Close drawer on path change
   useEffect(() => {
     setIsOpen(false);
     setServicesOpen(false);
+    setMobileServicesOpen(false);
     document.body.style.overflow = '';
   }, [pathname]);
 
@@ -145,10 +141,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex lg:hidden items-center gap-3">
-              <Link href="/contact" className="btn-gold text-xs px-3 py-2 min-h-[38px] font-semibold sm:inline-flex">
-                Quote
-              </Link>
+            <div className="flex lg:hidden items-center">
               <button
                 type="button"
                 onClick={toggleMenu}
@@ -206,29 +199,45 @@ export default function Navbar() {
             }`;
 
             if (item.href === '/services') {
+              const servicesActive = pathname === '/services' || pathname.startsWith('/services/');
               return (
                 <div key={item.href}>
-                  <Link href="/services" className={itemClass}>
-                    Services
-                  </Link>
-                  <div className="ml-4 mt-1 space-y-0.5 border-l border-slate-200 pl-2">
-                    {services.map((service) => {
-                      const href = `/services/${service.slug}`;
-                      const current = pathname === href;
-                      return (
-                        <Link
-                          key={service.slug}
-                          href={href}
-                          aria-current={current ? 'page' : undefined}
-                          className={`block rounded-lg px-3 py-2 text-sm font-semibold ${
-                            current ? 'text-brand-navy bg-amber-50' : 'text-slate-600 hover:bg-slate-100'
-                          }`}
-                        >
-                          {service.title}
-                        </Link>
-                      );
-                    })}
+                  <div className="flex items-stretch gap-1">
+                    <Link href="/services" className={`${itemClass} flex-1`}>
+                      Services
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setMobileServicesOpen((open) => !open)}
+                      className={`shrink-0 rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-100 ${
+                        servicesActive ? 'text-brand-navy' : ''
+                      }`}
+                      aria-expanded={mobileServicesOpen}
+                      aria-label={mobileServicesOpen ? 'Hide service list' : 'Show service list'}
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
                   </div>
+                  {mobileServicesOpen ? (
+                    <div className="ml-4 mt-1 space-y-0.5 border-l border-slate-200 pl-2">
+                      {services.map((service) => {
+                        const href = `/services/${service.slug}`;
+                        const current = pathname === href;
+                        return (
+                          <Link
+                            key={service.slug}
+                            href={href}
+                            aria-current={current ? 'page' : undefined}
+                            className={`block rounded-lg px-3 py-2 text-sm font-semibold ${
+                              current ? 'text-brand-navy bg-amber-50' : 'text-slate-600 hover:bg-slate-100'
+                            }`}
+                          >
+                            {service.title}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : null}
                 </div>
               );
             }
@@ -239,22 +248,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-        </div>
-        <div className="p-5 border-t border-slate-100 space-y-3 bg-slate-50">
-          <Link href="/contact" className="btn-gold w-full text-center text-sm">
-            Request a Quote
-          </Link>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp w-full text-sm"
-          >
-            Chat on WhatsApp
-          </a>
-          <div className="text-xs text-slate-500 text-center pt-2">
-            <a href={phoneHref} className="text-brand-navy font-semibold">{phoneDisplay}</a>
-          </div>
         </div>
       </div>
     </>
