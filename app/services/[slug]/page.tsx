@@ -38,7 +38,7 @@ function SectionHeading({ id, children, kicker }: { id?: string; children: React
       {kicker ? (
         <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#B8821F]">{kicker}</p>
       ) : null}
-      <h2 id={id} className="mt-2 text-3xl sm:text-[2.5rem] font-bold tracking-tight text-brand-navy leading-tight">
+      <h2 id={id} className="mt-2 text-2xl sm:text-[2.5rem] font-bold tracking-tight text-brand-navy leading-tight">
         {children}
         <span className="mt-4 block h-1 w-12 bg-[#E5A93C]" aria-hidden="true" />
       </h2>
@@ -202,22 +202,22 @@ export default async function ServicePage({ params }: Props) {
       >
         <ServicePhoto src={service.image.src} alt={service.image.alt} variant="hero" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071527] via-[#071527]/50 to-[#071527]/15" />
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 pt-36 sm:pb-16 sm:pt-44">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-32 sm:pb-16 sm:pt-44">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#E5A93C]">Our services</p>
-          <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.08]">
+          <h1 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.08]">
             {detail.headline}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl">{detail.lead}</p>
+          <p className="mt-4 max-w-2xl text-base text-slate-200 leading-relaxed sm:mt-5 sm:text-xl">{detail.lead}</p>
         </div>
       </section>
 
-      <section className="bg-[#f6f7f9] py-16 sm:py-24">
+      <section className="bg-[#f6f7f9] py-12 sm:py-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7 space-y-6">
-              <p className="text-lg text-slate-600 leading-relaxed">{linkedText(detail.includedIntro)}</p>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">{linkedText(detail.includedIntro)}</p>
               {detail.more.map((paragraph) => (
-                <p key={paragraph} className="text-lg text-slate-600 leading-relaxed">
+                <p key={paragraph} className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   {linkedText(paragraph)}
                 </p>
               ))}
@@ -227,7 +227,7 @@ export default async function ServicePage({ params }: Props) {
                 </p>
               ) : null}
             </div>
-            <div className="lg:col-span-5 flex lg:justify-end">
+            <div className="lg:col-span-5 flex lg:justify-end max-lg:pt-8 max-lg:border-t max-lg:border-slate-300">
               <div className="w-full max-w-sm">{contactAside(slug, detail.headline)}</div>
             </div>
           </div>
@@ -255,14 +255,14 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section id="included" className="bg-white py-16 sm:py-24">
+      <section id="included" className="bg-white py-12 sm:py-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading kicker="Scope">What this covers</SectionHeading>
-          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 sm:mt-12 flex flex-col max-sm:divide-y max-sm:divide-slate-200 max-sm:gap-0 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {detail.included.map((point) => (
               <li
                 key={point}
-                className="h-full rounded-2xl border border-slate-200 bg-[#fafbfc] p-6 shadow-sm border-l-4 border-l-[#E5A93C]"
+                className="h-full rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm border-l-4 border-l-[#E5A93C] sm:bg-[#fafbfc] max-sm:border-0 max-sm:border-l-4 max-sm:shadow-none max-sm:py-5 first:max-sm:pt-0"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E5A93C] text-[#0B1F3B]">
                   <Check className="w-4 h-4" strokeWidth={3} />
@@ -274,35 +274,41 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section id="process" className="border-y border-slate-200 bg-[#f6f7f9] py-16 sm:py-24">
+      <section id="process" className="bg-[#f6f7f9] py-12 sm:py-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
-            <header className="lg:col-span-4 lg:sticky lg:top-28">
+            <header className="lg:col-span-4 lg:sticky lg:top-28 pb-8 lg:pb-0 border-b border-slate-300 lg:border-b-0">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#B8821F]">Working with us</p>
-              <h2 className="mt-2 text-3xl sm:text-[2.35rem] font-bold tracking-tight text-brand-navy leading-tight">
+              <h2 className="mt-2 text-2xl sm:text-[2.35rem] font-bold tracking-tight text-brand-navy leading-tight">
                 How Jortin handles {detail.headline.toLowerCase()}
                 <span className="mt-4 block h-1 w-12 bg-[#E5A93C]" aria-hidden="true" />
               </h2>
               <p className="mt-5 text-lg text-slate-600 leading-relaxed">{linkedText(detail.processIntro)}</p>
             </header>
-            <ol className="mt-12 lg:col-span-8 lg:mt-0">
+            <ol className="mt-8 lg:col-span-8 lg:mt-0 flex flex-col gap-4 lg:gap-0">
               {detail.steps.map((step, index) => (
-                <li key={step.title} className="relative pb-10 last:pb-0 pl-11 sm:pl-14">
+                <li key={step.title} className="relative lg:pb-10 lg:last:pb-0 lg:pl-14">
                   {index < detail.steps.length - 1 ? (
                     <span
-                      className="absolute left-[15px] sm:left-[19px] top-9 bottom-0 w-0.5 bg-[#E5A93C]/70"
+                      className="absolute left-[19px] top-9 bottom-0 hidden w-0.5 bg-[#E5A93C]/70 lg:block"
                       aria-hidden="true"
                     />
                   ) : null}
                   <span
-                    className="absolute left-0 top-0 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-brand-navy text-sm sm:text-base font-extrabold text-[#E5A93C] ring-4 ring-[#f6f7f9]"
+                    className="absolute left-0 top-0 hidden h-10 w-10 items-center justify-center rounded-full bg-brand-navy text-base font-extrabold text-[#E5A93C] ring-4 ring-[#f6f7f9] lg:flex"
                     aria-hidden="true"
                   >
                     {index + 1}
                   </span>
-                  <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm">
-                    <h3 className="text-xl font-bold text-brand-navy leading-snug">{step.title}</h3>
-                    <p className="mt-3 text-slate-600 leading-relaxed">{linkedText(step.text)}</p>
+                  <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:rounded-2xl sm:p-7 lg:shadow-sm">
+                    <div className="flex items-start gap-3 lg:hidden">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-navy text-sm font-extrabold text-[#E5A93C]">
+                        {index + 1}
+                      </span>
+                      <h3 className="text-lg font-bold text-brand-navy leading-snug pt-1">{step.title}</h3>
+                    </div>
+                    <h3 className="hidden text-xl font-bold text-brand-navy leading-snug lg:block">{step.title}</h3>
+                    <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed lg:mt-3">{linkedText(step.text)}</p>
                   </article>
                 </li>
               ))}
@@ -311,10 +317,10 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section id="questions" className="bg-[#f6f7f9] py-16 sm:py-24">
+      <section id="questions" className="bg-white py-12 sm:py-24 border-b border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading kicker="FAQ">Questions</SectionHeading>
-          <div className="mt-10 rounded-2xl border border-slate-200 bg-white px-6 sm:px-8 divide-y divide-slate-200">
+          <div className="mt-8 sm:mt-10 rounded-xl sm:rounded-2xl border border-slate-200 bg-[#fafbfc] px-4 sm:px-8 divide-y divide-slate-200 shadow-sm">
             {detail.faqs.map((faq) => (
               <details key={faq.q} className="group py-5">
                 <summary className="cursor-pointer list-none text-lg font-bold text-brand-navy flex items-start justify-between gap-6">

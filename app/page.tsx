@@ -16,6 +16,57 @@ import {
 } from 'lucide-react';
 import ClosingCTA from '@/components/ClosingCTA';
 
+const featuredHomeServices = [
+  {
+    slug: 'consultancy',
+    title: 'Consultancy & Design',
+    summary:
+      'Feasibility studies, accurate BOQs, structural design (BS 8110 / Eurocode 2) and tender-ready documents before breaking ground.',
+    image: '/images/consultancy-design.jpg',
+    alt: 'Engineer reviewing structural drawings and a bill of quantities',
+  },
+  {
+    slug: 'structural',
+    title: 'Structural & Civil Works',
+    summary:
+      'Pad and strip foundations, reinforced concrete columns, beams, slabs, structural steel and rigorous formwork inspection.',
+    image: '/images/column-formwork.jpg',
+    alt: 'Reinforced concrete columns in formwork on a building site',
+  },
+  {
+    slug: 'building',
+    title: 'Building Construction',
+    summary:
+      'Residential homes, commercial blocks, renovations, walling, partitioning and high-standard interior and exterior finishes.',
+    image: '/images/house-structure.jpg',
+    alt: 'Two-storey block building under construction, with scaffolding',
+  },
+  {
+    slug: 'roads',
+    title: 'Road Works & Drainage',
+    summary:
+      'NCA 8 registered road rehabilitation, earthworks, grading, access driveways, drainage culverts and road safety structures.',
+    image: '/images/road-works.jpg',
+    alt: 'Road rehabilitation works with earthmoving equipment in Kenya',
+  },
+  {
+    slug: 'water',
+    title: 'Water & Sanitation',
+    summary:
+      'Borehole drilling, solar and pump equipping, water reticulation, storage towers and robust sanitation systems across Kenya.',
+    image: '/images/water-tower.jpg',
+    alt: 'Steel water tower and tank on a planted site',
+  },
+  {
+    slug: 'electrical',
+    title: 'Electrical & Mechanical',
+    summary:
+      'Building wiring, fittings, plumbing installations and MEP coordination integrated to eliminate rework and clashes.',
+    image: '/images/electrical-mechanical.jpg',
+    alt: 'Electrician installing wiring and fittings in a new building',
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -193,115 +244,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Services Grid (6 Featured) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* 1. Consultancy & Design */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/consultancy-design.jpg" alt="Engineer reviewing structural drawings and a bill of quantities" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Consultancy &amp; Design</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    Feasibility studies, accurate BOQs, structural design (BS 8110 / Eurocode 2) and tender-ready documents before breaking ground.
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:gap-0 max-md:divide-y max-md:divide-slate-200">
+            {featuredHomeServices.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/services/${item.slug}`}
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col h-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 max-md:rounded-none max-md:border-0 max-md:shadow-none max-md:py-8 max-md:first:pt-0"
+              >
+                <div className="relative h-48 w-full">
+                  <Image src={item.image} alt={item.alt} fill className="object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
-                <Link href="/services/consultancy" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* 2. Structural & Civil Works */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/column-formwork.jpg" alt="Reinforced concrete columns in formwork on a building site" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Structural &amp; Civil Works</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    Pad and strip foundations, reinforced concrete columns, beams, slabs, structural steel and rigorous formwork inspection.
-                  </p>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-brand-navy group-hover:text-amber-800 transition-colors">{item.title}</h3>
+                    <p className="text-slate-600 text-sm mt-2 leading-relaxed">{item.summary}</p>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy group-hover:text-amber-600 pt-2">
+                    Learn More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </div>
-                <Link href="/services/structural" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* 3. Building Construction */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/house-structure.jpg" alt="Two-storey block building under construction, with scaffolding" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Building Construction</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    Residential homes, commercial blocks, renovations, walling, partitioning and high-standard interior and exterior finishes.
-                  </p>
-                </div>
-                <Link href="/services/building" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* 4. Road Works & Civil Works */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/road-works.jpg" alt="Road rehabilitation works with earthmoving equipment in Kenya" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Road Works &amp; Drainage</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    NCA 8 registered road rehabilitation, earthworks, grading, access driveways, drainage culverts and road safety structures.
-                  </p>
-                </div>
-                <Link href="/services/roads" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* 5. Water & Sanitation */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/water-tower.jpg" alt="Steel water tower and tank on a planted site" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Water &amp; Sanitation</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    Borehole drilling, solar and pump equipping, water reticulation, storage towers and robust sanitation systems across Kenya.
-                  </p>
-                </div>
-                <Link href="/services/water" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* 6. Electrical & Mechanical */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-lift border border-slate-200 flex flex-col">
-              <div className="relative h-48 w-full">
-                <Image src="/images/electrical-mechanical.jpg" alt="Electrician installing wiring and fittings in a new building" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Electrical &amp; Mechanical</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    Building wiring, fittings, plumbing installations and MEP coordination integrated to eliminate rework and clashes.
-                  </p>
-                </div>
-                <Link href="/services/electrical" className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-navy hover:text-amber-600 pt-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+              </Link>
+            ))}
           </div>
 
           <div className="text-center mt-12">

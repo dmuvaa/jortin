@@ -51,42 +51,49 @@ export default function ServicesPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-lg:divide-y max-lg:divide-slate-200 lg:space-y-24">
           {services.map((service, index) => {
             const imageFirst = index % 2 === 1;
-            const copy = (
-              <div className="space-y-5">
-                <h2 className="text-3xl font-extrabold text-brand-navy">{service.title}</h2>
-                <p className="text-slate-600 text-base leading-relaxed">{service.body}</p>
-                <ul className="space-y-2.5 text-sm text-slate-700">
-                  {service.points.map((point) => (
-                    <li key={point} className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-2 flex flex-wrap gap-3">
-                  <Link href={`/services/${service.slug}`} className="btn-gold text-sm">
-                    <span>{service.title}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <Link href={`/contact?service=${service.slug}`} className="btn-outline-navy text-sm">
-                    Request a Quote
-                  </Link>
-                </div>
-              </div>
-            );
-            const photo = (
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative aspect-[4/3]">
-                <Image src={service.image.src} alt={service.image.alt} fill className="object-cover" sizes="(min-width: 1024px) 36rem, 100vw" />
-              </div>
-            );
-
             return (
-              <div key={service.slug} id={service.slug} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-8 border-t border-slate-100">
-                <div className={imageFirst ? 'order-2 lg:order-1' : undefined}>{imageFirst ? photo : copy}</div>
-                <div className={imageFirst ? 'order-1 lg:order-2' : undefined}>{imageFirst ? copy : photo}</div>
+              <div
+                key={service.slug}
+                id={service.slug}
+                className="space-y-6 lg:space-y-8 max-lg:py-10 max-lg:first:pt-0 lg:pt-8 lg:border-t lg:border-slate-100"
+              >
+                <h2 className="text-3xl font-extrabold text-brand-navy">{service.title}</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                  <div className={imageFirst ? 'lg:order-1' : 'lg:order-2'}>
+                    <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative aspect-[4/3]">
+                      <Image
+                        src={service.image.src}
+                        alt={service.image.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 36rem, 100vw"
+                      />
+                    </div>
+                  </div>
+                  <div className={`space-y-5 ${imageFirst ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <p className="text-slate-600 text-base leading-relaxed">{service.body}</p>
+                    <ul className="space-y-2.5 text-sm text-slate-700">
+                      {service.points.map((point) => (
+                        <li key={point} className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pt-2 flex flex-wrap gap-3">
+                      <Link href={`/services/${service.slug}`} className="btn-gold text-sm">
+                        <span>{service.title}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      <Link href={`/contact?service=${service.slug}`} className="btn-outline-navy text-sm">
+                        Request a Quote
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}
